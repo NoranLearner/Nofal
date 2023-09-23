@@ -5,5 +5,7 @@
 
 #### References:
 [JWT Package](https://jwt-auth.readthedocs.io/en/develop/)
+
 [JWT Github](https://github.com/tymondesigns/jwt-auth)
+
 [Pusher](https://pusher.com/)

@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "ba16a94c-3e21-447c-82a5-d67724c43f80",
+		"name": "Car Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19336225"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "user-register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Noran",
+									"type": "text"
+								},
+								{
+									"key": "country_code",
+									"value": "+02",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01287313236",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "noranmostafa843@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "NewYear2022Ellah",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "NewYear2022Ellah",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Vendor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ar/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ar",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country_code",
+									"value": "+02",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01287313236",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "NewYear2022Ellah",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ar/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ar",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "phone-verification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SagiCkJtZEWLtaAYGx9k0BXJISNDbOXyouMBnFHEe65b9366",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country_code",
+									"value": "+02",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01287313236",
+									"type": "text"
+								},
+								{
+									"key": "phone_verify_code",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ar/phone-verification",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ar",
+								"phone-verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country_code",
+									"value": "+02",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01287313236",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ar/password/forget-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ar",
+								"password",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country_code",
+									"value": "+02",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01287313236",
+									"type": "text"
+								},
+								{
+									"key": "reset_code",
+									"value": "654321",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "NewYear2022Ellah",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "NewYear2022Ellah",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ar/password/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ar",
+								"password",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

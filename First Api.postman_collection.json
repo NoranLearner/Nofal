@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "5c0a6962-13ee-4532-9a59-b9b6e6c0501c",
+		"name": "First Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19336225"
+	},
+	"item": [
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "get-all-posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/get-all-posts?lang=en",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"get-all-posts"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/post-details?lang=en&id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"post-details"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lang",
+									"value": "en",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "Title One",
+									"type": "text"
+								},
+								{
+									"key": "title_ar",
+									"value": "اول عنوان",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "Description One",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "اول وصف مقاله",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/noran/Downloads/answer.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/user/create-post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"create-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/delete-post?lang=en&id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"delete-post"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lang",
+									"value": "en",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "title two",
+									"type": "text"
+								},
+								{
+									"key": "title_ar",
+									"value": "ثانى عنوان",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "description two",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "ثانى وصف مقاله",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/noran/Downloads/question.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/user/update-post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update-post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "user-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/login?lang=en&email=nor@gmail.com&password=12345678",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "email",
+									"value": "nor@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2OTA4ODI2MTYsImV4cCI6MTY5MDg4NjIxNiwibmJmIjoxNjkwODgyNjE2LCJqdGkiOiJoeDBwdWFwZnJqTFBjWjFvIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.bH09unFxA9pBLxhl7l_Gzlh0Q0IZ1m3Gd_ShwXCn6To",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/register?lang=en&name=ahmed&email=ahmed@gmail.com&password=12345678&password_confirmation=12345678",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "name",
+									"value": "ahmed"
+								},
+								{
+									"key": "email",
+									"value": "ahmed@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "12345678"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2OTA4ODc4MjAsImV4cCI6MTY5MDg5MTQyMCwibmJmIjoxNjkwODg3ODIwLCJqdGkiOiJPYVhlVUhBaWNpS1ZlajRPIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.8HYzpcBJvkILZ1QLLu_Dez1On0QS8XLL7eNHtKcHsW0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE2OTA4ODk3NzUsImV4cCI6MTY5MDg5MzM3NSwibmJmIjoxNjkwODg5Nzc1LCJqdGkiOiJHNEtyQjVjQXZJRWlTUkVOIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.2EBwDdEZcVdZIX3Vasj5hcOss502KNgnGJtpsLLc_Zs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/refresh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

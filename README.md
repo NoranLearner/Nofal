@@ -1,4 +1,4 @@
-##Store API Application
+Store API Application
 
 _You have a store app (with Laravel). The app divides the products by different categories._
 

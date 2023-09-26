@@ -23,7 +23,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             // https://laravel.com/docs/10.x/validation#rule-unique
-            'title' => 'required|string|min:5|max:255|unique:categories,title,except,id',
+            'title' => 'required|string|min:5|max:255|unique:categories,title',
             'slug' => 'unique:categories,slug',
             'description' => 'nullable|max:5000',
             'image' => 'required|image|mimes:png,jpeg,jpg,gif|max:2048',

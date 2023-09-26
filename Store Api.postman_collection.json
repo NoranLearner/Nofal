@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "e291dfad-db9b-450b-aabc-e8c0dd7f73c8",
+		"name": "Store Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19336225"
+	},
+	"item": [
+		{
+			"name": "add-category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Clothes",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "clothes",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "clothes_desc",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/noran/Downloads/Clothes/Tooting-Store-5.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/addCategory",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"addCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Bag",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "bag",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "250",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "expiration",
+							"value": "expire",
+							"type": "text"
+						},
+						{
+							"key": "cat_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "image[]",
+							"type": "file",
+							"src": "/home/noran/Downloads/Bag/Screenshot from 2023-09-24 20-43-22.png"
+						},
+						{
+							"key": "image[]",
+							"type": "file",
+							"src": "/home/noran/Downloads/Bag/Screenshot from 2023-09-24 20-51-41.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/addProduct",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"addProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Bag",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "bag",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "250",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "expiration",
+							"value": "expire",
+							"type": "text"
+						},
+						{
+							"key": "cat_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "image[]",
+							"type": "file",
+							"src": "/home/noran/Downloads/Bag/Screenshot from 2023-09-24 20-43-22.png"
+						},
+						{
+							"key": "image[]",
+							"type": "file",
+							"src": "/home/noran/Downloads/Bag/Screenshot from 2023-09-24 20-51-41.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/updateProduct",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"updateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-expire-product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/api/delExpProduct",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"delExpProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cat_most_have_products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/mostProductCat",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"mostProductCat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "high_price_products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cat_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/highPrice",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"highPrice"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

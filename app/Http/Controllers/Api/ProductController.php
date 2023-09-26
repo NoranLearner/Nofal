@@ -64,7 +64,7 @@ class ProductController extends Controller
         $id = $request->id;
 
         $product = Product::with('images')->findOrFail($id);
-        // $product_images =  $product->images;
+
         $product_images =  $product->images->pluck('image')->toarray();
         // return $product_images;
 
@@ -74,23 +74,18 @@ class ProductController extends Controller
                 Rule::unique('products')->ignore($product->id, 'id'),
             ],
             'slug' => [
+                'required',
                 Rule::unique('products')->ignore($product->slug, 'slug'),
             ],
-            'price' => 'numeric|gt:0',
-            'image.*' => 'image|mimes:png,jpeg,jpg,gif|max:2048',
-            'amount' => 'numeric',
-            'expiration' => 'in:valid,expire',
-            'cat_id' => 'exists:categories,id',
+            'price' => 'required|numeric|gt:0',
+            'image.*' => 'required|image|mimes:png,jpeg,jpg,gif|max:2048',
+            'amount' => 'required|numeric',
+            'expiration' => 'required|in:valid,expire',
+            'cat_id' => 'required|exists:categories,id',
         ]);
 
         if ($validator->fails()) {
             return $this->returnError('400', $validator->errors());
-        }
-
-        if (!$product) {
-            return response()->json([
-                'message' => 'Product Not Found',
-            ], 404);
         }
 
         $product->update([
@@ -191,7 +186,7 @@ class ProductController extends Controller
 
         if ($expire_product_delete) {
             return response()->json([
-                'message' => 'Post Deleted Successfully',
+                'message' => 'Product Deleted Successfully',
             ], 200);
         }
 
